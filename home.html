@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Vantage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f4f9;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+        .navbar img {
+            width: 40px;
+        }
+        .container {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .container h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        .btn-group {
+            margin-top: 30px;
+        }
+        .btn-group a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .btn-group a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 50px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p {
+            font-size: 0.9em;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .grid {
+                flex-direction: column;
+            }
+            .navbar {
+                padding: 15px 20px;
+            }
+            .container h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div>
+            <img src="logo.jpg" alt="Flood Vantage Logo">
+            <span style="margin-left: 10px; font-size: 1.5em; font-weight: bold;">Flood Vantage</span>
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to Flood Vantage</h1>
+        <div class="grid">
+            <div class="card">
+                <img src="weather.jpg" alt="Weather Forecast Icon">
+                <a href="weather.html">
+                    <h3>Weather Forecast</h3>
+                </a>
+            </div>
+            <div class="card">
+                <img src="flood.jpg" alt="Flood Prone Area Icon">
+                <a href="flood-prone-area.html">
+                    <h3>Flood Prone Area</h3>
+                </a>
+            </div>
+            <div class="card">
+                <img src="emerg.jpg" alt="Emergency Tracker Icon">
+                <a href="emergency-tracker.html">
+                    <h3>Emergency Tracker</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Flood Vantage. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

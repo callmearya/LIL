@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('path-to-your-flood-related-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay for better contrast */
+}
+
+/* App Container */
+.app {
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Darker background to emphasize content */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Top Section */
+.top {
+    margin-bottom: 20px;
+}
+
+/* Time and Date */
+.time, .date, .timezone, .country {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Current Weather Items */
+.current-weather-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.weather-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Current Temperature Styling */
+#current-temp {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#current-temp h2 {
+    font-size: 3rem;
+    color: #00bcd4; /* Aquatic Color */
+}
+
+#current-temp p {
+    font-size: 1.5rem;
+    color: #b3e0e6; /* Lighter aquatic color */
+}
+
+/* Time and Date Styling */
+.time, .date, .timezone, .country {
+    color: #b3e0e6;
+    font-weight: 600;
+}
+
+/* Additional Styling for Flood Monitoring Data (new sections) */
+.flood-warning {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #ff5722; /* Flood warning color */
+    background: rgba(255, 87, 34, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flood-warning span {
+    font-weight: bold;
+}
+
+.flood-warning p {
+    font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .app {
+        padding: 15px;
+        max-width: 100%;
+    }
+}

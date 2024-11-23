@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Vantage - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f4f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+        .back-button a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .back-button a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <div class="content">
+        <h2>Welcome to Your Dashboard</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Flood Alerts</h3>
+                <p>View live flood alerts and notifications.</p>
+            </div>
+            <div class="card">
+                <h3>Analytics</h3>
+                <p>Analyze flood patterns and historical data.</p>
+            </div>
+            <div class="card">
+                <h3>Resources</h3>
+                <p>Access guides and safety resources.</p>
+            </div>
+            <div class="card">
+                <h3>Community</h3>
+                <p>Connect with local volunteers and NGOs.</p>
+            </div>
+        </div>
+        <div class="back-button">
+            <a href="home.html">← Back to Home</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Flood Vantage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
