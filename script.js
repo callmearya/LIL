@@ -1,5 +1,5 @@
 const API_KEY = 'b619f429ef275f8c2c48e44338e880e6'; // Replace with your Weatherstack API key
-const BASE_URL = 'http://api.weatherstack.com/current';
+const BASE_URL = 'https://api.weatherstack.com/current'; // Use HTTPS
 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -7,9 +7,9 @@ const timeZoneEl = document.getElementById('time-zone');
 const countryEl = document.getElementById('country');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');
 const currentTempEl = document.getElementById('current-temp');
-const floodWarningEl = document.createElement('div'); // New element for flood warning
+const floodWarningEl = document.createElement('div');
 
-// Function to fetch weather data
+// Fetch Weather Data
 function fetchWeather(latitude, longitude) {
     const url = `${BASE_URL}?access_key=${API_KEY}&query=${latitude},${longitude}`;
 
@@ -25,12 +25,11 @@ function fetchWeather(latitude, longitude) {
         .catch((err) => console.error('API fetch error:', err));
 }
 
-// Function to display weather data
+// Display Weather Data
 function displayWeatherData(data) {
-    const { temperature, wind_speed, humidity, weather_descriptions, feelslike, rainfall } = data.current;
+    const { temperature, wind_speed, humidity, weather_descriptions, feelslike, precip } = data.current;
     const { country, region, name: city } = data.location;
 
-    // Update weather items
     currentWeatherItemsEl.innerHTML = `
         <div class="weather-item"><span>Temperature:</span> ${temperature}°C</div>
         <div class="weather-item"><span>Feels Like:</span> ${feelslike}°C</div>
@@ -39,8 +38,7 @@ function displayWeatherData(data) {
         <div class="weather-item"><span>Conditions:</span> ${weather_descriptions[0]}</div>
     `;
 
-    // Flood Warning Section (based on heavy rainfall or flood-prone data)
-    if (rainfall > 50) {  // Example: If rainfall is over 50mm, display flood warning
+    if (precip > 50) { 
         floodWarningEl.innerHTML = `
             <div class="flood-warning">
                 <span>Flood Warning:</span>
@@ -50,15 +48,12 @@ function displayWeatherData(data) {
         document.body.appendChild(floodWarningEl);
     }
 
-    // Update location details
     timeZoneEl.textContent = `Region: ${region}`;
     countryEl.textContent = `Country: ${country}`;
-
-    // Update temperature section
     currentTempEl.innerHTML = `<h2>${temperature}°C</h2><p>${weather_descriptions[0]}</p>`;
 }
 
-// Function to fetch and update time and date
+// Update Time and Date
 function updateTimeAndDate() {
     const now = new Date();
     const dateOptions = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
@@ -69,7 +64,7 @@ function updateTimeAndDate() {
     dateEl.textContent = `Date: ${date}`;
 }
 
-// Function to fetch user's location
+// Get User Location
 function getUserLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -79,18 +74,20 @@ function getUserLocation() {
             },
             (error) => {
                 console.error('Geolocation error:', error);
-                alert('Unable to fetch your location. Please enable location services.');
+                alert('Unable to fetch your location. Using default location (Chennai).');
+                fetchWeather(13.0827, 80.2707);
             }
         );
     } else {
-        alert('Geolocation is not supported by your browser.');
+        alert('Geolocation is not supported by your browser. Using default location (Chennai).');
+        fetchWeather(13.0827, 80.2707);
     }
 }
 
-// Initialize the app
+// Initialize App
 function init() {
     updateTimeAndDate();
-    setInterval(updateTimeAndDate, 60000); // Update time every minute
+    setInterval(updateTimeAndDate, 60000);
     getUserLocation();
 }
 
